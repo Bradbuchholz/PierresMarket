@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 
-namespace PierresMarket.Models
+namespace PierresSweetSavory.Models
 {
-  public class Flavor
-  {
-    public Flavor()
+    public class Flavor
     {
-      this.JoinEntities = new HashSet<FlavorTreat>();
+        public Flavor()
+        {
+            this.JoinEntities = new HashSet<FlavorTreat>();
+        }
+
+        public int FlavorId { get; set; }
+        public string Name { get; set; }
+        public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
     }
-    public int FlavorId { get; set; }
-    public string Name { get; set; }
-    public virtual ApplicationUser User { get; set; }
-    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
-  }
 }

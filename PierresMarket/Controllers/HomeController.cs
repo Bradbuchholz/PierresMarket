@@ -1,20 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using PierresMarket.Models;
-using System.Linq;
 
-namespace PierresMarket.Controllers
+namespace PierresSweetSavory.Controllers
 {
-  public class HomeController : Controller
-  {
-    private readonly PierresMarketContext _db;
-    public HomeController(PierresMarketContext db)
+    public class HomeController : Controller
     {
-      _db = db;
+
+      [HttpGet("/")]
+      public ActionResult Index()
+      {
+        return View();
+      }
+
     }
-    public ActionResult Index()
-    {
-      ViewBag.Flavors = _db.Flavors.ToList();
-      return View(_db.Treats.ToList());
-    }
-  }
 }
