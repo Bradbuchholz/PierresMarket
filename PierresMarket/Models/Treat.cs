@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PierresSweetSavory.Models
+namespace PierresMarket.Models
 {
     public class Treat
     {

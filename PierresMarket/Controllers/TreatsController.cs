@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using PierresSweetSavory.Models;
+using PierresMarket.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
@@ -9,15 +9,15 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
-namespace PierresSweetSavory.Controllers
+namespace PierresMarket.Controllers
 {
   [Authorize]
   public class TreatsController : Controller
   {
-    private readonly PierresSweetSavoryContext _db;
+    private readonly PierresMarketContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsController(UserManager<ApplicationUser> userManager, PierresSweetSavoryContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, PierresMarketContext db)
     {
       _userManager = userManager;
       _db = db;

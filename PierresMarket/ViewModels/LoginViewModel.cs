@@ -1,4 +1,4 @@
-namespace PierresSweetSavory.ViewModels
+namespace PierresMarket.ViewModels
 {
     public class LoginViewModel
     {

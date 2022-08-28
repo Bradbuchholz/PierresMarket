@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using PierresSweetSavory.Models;
+using PierresMarket.Models;
 using System.Threading.Tasks;
-using PierresSweetSavory.ViewModels;
+using PierresMarket.ViewModels;
 
-namespace PierresSweetSavory.Controllers
+namespace PierresMarket.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly PierresSweetSavoryContext _db;
+        private readonly PierresMarketContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, PierresSweetSavoryContext db)
+        public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, PierresMarketContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;

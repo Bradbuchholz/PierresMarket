@@ -1,16 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using PierresSweetSavory.Models;
+using PierresMarket.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PierresSweetSavory.Controllers
+namespace PierresMarket.Controllers
 {
   public class FlavorsController : Controller
   {
-    private readonly PierresSweetSavoryContext _db;
+    private readonly PierresMarketContext _db;
 
-    public FlavorsController(PierresSweetSavoryContext db)
+    public FlavorsController(PierresMarketContext db)
     {
       _db = db;
     }

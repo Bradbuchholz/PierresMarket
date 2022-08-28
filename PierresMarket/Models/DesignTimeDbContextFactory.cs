@@ -3,23 +3,23 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace PierresSweetSavory.Models
+namespace PierresMarket.Models
 {
-  public class PierresSweetSavoryContextFactory : IDesignTimeDbContextFactory<PierresSweetSavoryContext>
+  public class PierresMarketContextFactory : IDesignTimeDbContextFactory<PierresMarketContext>
   {
 
-    PierresSweetSavoryContext IDesignTimeDbContextFactory<PierresSweetSavoryContext>.CreateDbContext(string[] args)
+    PierresMarketContext IDesignTimeDbContextFactory<PierresMarketContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<PierresSweetSavoryContext>();
+      var builder = new DbContextOptionsBuilder<PierresMarketContext>();
 
       builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
 
-      return new PierresSweetSavoryContext(builder.Options);
+      return new PierresMarketContext(builder.Options);
     }
   }
 }

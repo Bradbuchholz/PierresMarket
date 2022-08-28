@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace PierresSweetSavory.ViewModels
+namespace PierresMarket.ViewModels
 {
     public class RegisterViewModel
     {
