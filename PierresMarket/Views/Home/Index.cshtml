@@ -1,79 +1,8 @@
 @{
   Layout = "_Layout";
 }
-@using PierresMarket.Models
-@model List<PierresMarket.Models.Treat>
 
-<h2 class="text-center">Welcome to Pierres Sweet and Savory treats</h2>
-
-@if (Model.Count == 0 && ViewBag.Flavors.Count == 0)
-{
-  <p class="text-center">There are currently no recipes or flavor tags in the system. Add some and you'll see them displayed on this page.</p>
-  <hr>
-}
-else
-{
-  <p class="text-center">Feel free to browse all our delicious treats below or using the links above.</p>
-  <hr>
-  <div class="row">
-    @if (Model.Count != 0)
-    {
-      <div class="col">
-        <h4>Treats</h4>
-        @foreach (Treat treat in Model)
-        {
-          <div class="card border-dark mb-3">
-            <div class="row g-0">
-              <div class="col-md-3">
-                @if (treat.ImageName == null)
-                {
-                  <img src='~/img/DefaultTreatImage.png' class="img-thumbnail treat-index-image rounded mr-3 bg-light px-2 py-2 details-image">
-                }
-                else
-                {
-                  <img src='@Url.Content("~/img/TreatImages/" + treat.ImageName)' class="img-thumbnail treat-index-image rounded mr-3 bg-light px-2 py-2">
-                }
-              </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <h5 class="card-title">@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId})</h5>
-                  <hr>
-                  <p class="card-text">@treat.Description</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        }
-      </div>
-    }
-    else
-    {
-      <div class="col">
-        <h4>Treats</h4>
-        <p>No treats have been added yet.</p>
-      </div>
-    }
-    @if (ViewBag.Flavors.Count != 0)
-    {
-      <div class="col-md-3">
-        <h4>Flavors</h4>
-        <div class="list-group">
-          @foreach (Flavor flavor in ViewBag.Flavors)
-          {
-            <a class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between align-items-center" href='@Url.Action("Details", "Flavors", new { id = flavor.FlavorId})'>
-              @flavor.Name
-              <span class="badge bg-primary rounded-pill">@flavor.JoinEntities.Count</span>
-            </a>
-          }
-        </div>
-      </div>
-    }
-    else
-    {
-      <div class="col-md-3">
-        <h4>Flavors</h4>
-        <p>No flavors have been added yet.</p>
-      </div>
-    }
-  </div>
-}
+<h1>Welcome to the Perre's Bakery!</h1>
+<p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
+<p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
+<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
