@@ -2,27 +2,20 @@
   Layout = "_Layout";
 }
 
-@using PierresMarket.Models
-@model List<PierresMarket.Models.Flavor>
+@using PierresSweetSavory.Models;
 
-<h2>Flavors</h2>
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link" href='@Url.Action("Create", "Flavors")'><button class="btn btn-primary">Add new flavor</button></a>
-  </li>
+<h1>Flavors</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No flavors have been added yet!</h3>
+} 
+
+<ul>
+  @foreach(Flavor flave in Model)
+  {
+    <li>@Html.ActionLink($"{flave.Name}", "Details", new { id = flave.FlavorId })</li>
+  }
 </ul>
 
-@if (Model.Count == 0)
-{
-  <p>No flavors added yet.</p>
-}
-else
-{
-  <p>Here is a list of all flavors in the system:</p>
-  <ul>
-    @foreach (Flavor flavor in Model)
-    {
-      <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId})</li>
-    }
-  </ul>
-}
+<p>@Html.ActionLink("Add new flavor", "Create")</p>
