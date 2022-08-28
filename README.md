@@ -21,11 +21,11 @@ _A user should be able to navigate to a splash page that lists all treats and fl
 ## Setup / Installation 
 
 1. Download and install **`dotnet 5.0`** on your computer. 
-2. Clone the GitHub [repository](https://github.com/Bradbuchholz/PierresMarket.git) onto your computer.
+2. Clone the GitHub [repository](https://github.com/Bradbuchholz/PierresSweetSavory.Solution) onto your computer.
 3. Make sure to have MySql Workbench installed on your computer.
 4. Make sure to have dotnet-ef installed - this project uses **`version 5.0.1`**. I have it globally installed, but you can also install it just in this directory. 
 5. Open the project in VScode or your terminal of choice. 
-6. Create an `appsettings.json` file in the `PierresMarket.Solution/PierresMarket/` directory and add the following code, replacing anything in `square brackets` with the information it represents specific to the project database: 
+6. Create an `appsettings.json` file in the `PierresSweetSavory.Solution/PierresSweetSavory/` directory and add the following code, replacing anything in `square brackets` with the information it represents specific to the project database: 
 ```
 {
   "ConnectionStrings": {
@@ -44,7 +44,7 @@ _A user should be able to navigate to a splash page that lists all treats and fl
 }
 ```
 7. Open MySql Workbench and login to your server.
-8. From your terminal navigate to the `PierresMarket` folder and run the command **`dotnet ef database update`** to create the database from migrations.
+8. From your terminal navigate to the `PierresSweetSavory` folder and run the command **`dotnet ef database update`** to create the database from migrations.
 9. Next use the command **`dotnet run`** in your terminal to launch the program.
 10. The site should be avaialbe at the local host listed in your terminal. 
 
